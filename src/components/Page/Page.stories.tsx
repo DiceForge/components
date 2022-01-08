@@ -10,6 +10,6 @@ export default {
 
 export const Default = () => (
     <Page background={gradient4}>
-        <h1>Hello World!</h1>
+        <h1 style={{ height: 2000 }}>Hello World!</h1>
     </Page>
 );
