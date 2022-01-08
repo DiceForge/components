@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
-import Text, { TextProps } from './Text';
+import { Text, TextProps } from './Text';
 import { textSizeTypes } from '../common';
 
 export default {

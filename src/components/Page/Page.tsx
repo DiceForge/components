@@ -15,4 +15,4 @@ const Page = (props: PageProps & React.HTMLProps<HTMLDivElement>) => {
     );
 };
 
-export default Page;
+export { Page };

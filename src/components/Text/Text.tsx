@@ -103,4 +103,4 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
     }
 };
 
-export default Text;
+export { Text };
