@@ -1,0 +1,58 @@
+.TableWrapper {
+    @apply rounded filter shadow-sm;
+}
+
+.Table {
+    @apply rounded bg-gray-10 w-full;
+
+    thead > tr, tbody > tr:not(:last-child) {
+        @apply border-b border-gray-9;
+    }
+
+    tr {
+        @apply transition-colors duration-200 hover:bg-gray-9
+    }
+
+    thead tr {
+        th:first-child {
+            @apply rounded-tl;
+        }
+
+        th:last-child {
+            @apply rounded-tr;
+        }
+    }
+
+    tbody tr:last-child {
+        td:first-child {
+            @apply rounded-bl;
+        }
+
+        td:last-child {
+            @apply rounded-br;
+        }
+    }
+
+    td, th {
+        @apply p-3 px-6 text-body;
+    }
+
+    th {
+        text-align: left;
+        @apply font-semibold;
+    }
+
+    td:not(:first-child), th:not(:first-child) {
+        // text-align: right;
+    }
+
+    .ActiveRow {
+        @apply bg-primary-6 hover:bg-primary-7 text-white;
+    }
+}
+
+.Compact {
+    td, th {
+        @apply p-2 px-6 text-body-small;
+    }
+}

@@ -1,0 +1,60 @@
+.Text {
+    font-family: Inter, Helvetica, 'sans-serif';
+    line-height: 120%;
+}
+
+.SemiBold {
+    font-weight: 600;
+}
+
+.Primary {
+    @apply text-primary-6;
+}
+
+.Accent {
+    @apply text-accent-6;
+}
+
+.Danger {
+    @apply text-danger-6;
+}
+
+.Heading1 {
+    font-size: 72px;
+}
+
+.Heading2 {
+    font-size: 60px;
+}
+
+.Heading3 {
+    font-size: 48px;
+}
+
+.Heading4 {
+    font-size: 36px;
+}
+
+.Heading5 {
+    font-size: 30px;
+}
+
+.Heading6 {
+    font-size: 24px;
+}
+
+.Subtitle {
+    font-size: 18px;
+}
+
+.Body {
+    font-size: 16px;
+}
+
+.BodySmall {
+    font-size: 14px;
+}
+
+.Footnote {
+    font-size: 10px;
+}

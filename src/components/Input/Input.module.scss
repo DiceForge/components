@@ -1,0 +1,16 @@
+.Input {
+    @apply bg-gray-9 rounded text-gray-1 text-body-small focus:outline-none focus:bg-primary-6 focus:text-gray-10 transition;
+
+    padding: 7px 12px;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.25);
+
+    &::placeholder {
+        @apply text-gray-8;
+    }
+
+    &:focus {
+        &::placeholder {
+            @apply text-gray-9;
+        }
+    }
+}
