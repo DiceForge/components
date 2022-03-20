@@ -1,0 +1,41 @@
+@import "../Input/Input.module";
+@import "../Card/Card.module";
+
+.Wrapper {
+    @apply inline;
+    width: 225px;
+}
+
+.Input {
+    @apply cursor-pointer relative;
+
+    .InputLabel {
+        @apply block truncate;
+        padding-right: 20px;
+
+        .Placeholder {
+            @apply text-gray-6;
+        }
+    }
+}
+
+.Icon {
+    @apply absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none;
+}
+
+.Card {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.Option {
+    @apply transition duration-200 flex items-center rounded p-3 cursor-pointer relative block truncate;
+    height: 35px;
+    padding-right: 40px;
+
+    &.Active {
+        @apply bg-blue-7;
+    }
+}

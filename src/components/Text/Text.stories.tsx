@@ -21,16 +21,16 @@ const Template: ComponentStory<typeof Text> = (args: TextProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    textSize: 'heading-1',
+    textSize: 'heading-6',
     weight: 'default',
     color: 'default',
-    useSpan: false
+    inline: false
 };
 
 export const SpanExample = () => (
     <Text textSize="body" width={600}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.{' '}
-        <Text textSize="body" weight="semibold" color="primary" useSpan>
+        <Text textSize="body" weight="semibold" color="primary" inline>
             Accusantium amet aspernatur deleniti
         </Text>{' '}
         dicta dignissimos eaque eos, laboriosam libero modi odio omnis pariatur possimus reiciendis rem tempora tempore

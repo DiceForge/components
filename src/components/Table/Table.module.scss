@@ -3,14 +3,14 @@
 }
 
 .Table {
-    @apply rounded bg-gray-10 w-full;
+    @apply rounded bg-gray-2 text-gray-10 w-full;
 
     thead > tr, tbody > tr:not(:last-child) {
-        @apply border-b border-gray-9;
+        @apply border-b border-gray-3;
     }
 
     tr {
-        @apply transition-colors duration-200 hover:bg-gray-9
+        @apply transition-colors duration-200
     }
 
     thead tr {
@@ -47,12 +47,22 @@
     }
 
     .ActiveRow {
-        @apply bg-primary-6 hover:bg-primary-7 text-white;
+        @apply bg-primary-6 text-white;
     }
 }
 
 .Compact {
     td, th {
         @apply p-2 px-6 text-body-small;
+    }
+}
+
+.Hover {
+    tr {
+        @apply hover:bg-gray-3;
+    }
+
+    .ActiveRow {
+        @apply hover:bg-primary-7;
     }
 }

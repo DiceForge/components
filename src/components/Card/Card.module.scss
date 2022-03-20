@@ -1,19 +1,15 @@
 .Card {
-    @apply filter shadow-sm hover:shadow transition rounded p-8;
-}
+    @apply filter shadow-sm transition rounded p-8 text-gray-10;
 
-.Default {
-    @apply bg-gray-10;
-}
-
-.Level1 {
-    @apply bg-gray-9;
-}
-
-.Level2 {
-    @apply bg-gray-8;
+    background-color: rgba(224, 224, 230, 0.035);
+    outline: none;
+    border: none;
 }
 
 .Color {
-    @apply bg-primary-gradient text-gray-10;
+    @apply bg-primary-gradient;
+}
+
+.Small {
+    @apply p-4;
 }

@@ -8,11 +8,15 @@ export interface TextProps {
     weight?: TextWeight;
     color?: Colors;
     width?: number;
-    useSpan?: boolean;
+    inline?: boolean;
 }
 
+type ElementMap = {
+    [key in TextSize]: string;
+};
+
 const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
-    const { textSize, weight, color, width, useSpan, ...rest } = props;
+    const { textSize, weight, color, width, inline, ...rest } = props;
 
     const textStyles = classNames(styles.Text, {
         [styles.Heading1]: textSize === 'heading-1',
@@ -31,7 +35,7 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
         [styles.Danger]: color === 'danger'
     });
 
-    if (useSpan) {
+    if (inline) {
         return (
             <span className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
                 {props.children}
@@ -39,68 +43,24 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
         );
     }
 
-    switch (textSize) {
-        case 'heading-1':
-            return (
-                <h1 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h1>
-            );
-        case 'heading-2':
-            return (
-                <h2 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h2>
-            );
-        case 'heading-3':
-            return (
-                <h3 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h3>
-            );
-        case 'heading-4':
-            return (
-                <h4 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h4>
-            );
-        case 'heading-5':
-            return (
-                <h5 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h5>
-            );
-        case 'heading-6':
-            return (
-                <h6 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h6>
-            );
-        case 'subtitle':
-            return (
-                <h6 className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </h6>
-            );
-        case 'body':
-            return (
-                <p className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </p>
-            );
-        case 'body-small':
-            return (
-                <p className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </p>
-            );
-        case 'footnote':
-            return (
-                <p className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
-                    {props.children}
-                </p>
-            );
-    }
+    const elementMap: ElementMap = {
+        'heading-1': 'h1',
+        'heading-2': 'h2',
+        'heading-3': 'h3',
+        'heading-4': 'h4',
+        'heading-5': 'h5',
+        'heading-6': 'h6',
+        subtitle: 'h6',
+        body: 'p',
+        'body-small': 'p',
+        footnote: 'p'
+    };
+
+    return React.createElement(
+        elementMap[textSize],
+        { className: textStyles, style: { maxWidth: width ?? 'inherit' }, ...rest },
+        props.children
+    );
 };
 
 export { Text };

@@ -25,6 +25,7 @@ export type TextSize =
     | 'body'
     | 'body-small'
     | 'footnote';
+
 export const textSizeTypes = {
     options: [
         'heading-1',
@@ -44,3 +45,12 @@ export const textSizeTypes = {
 };
 
 export type TextWeight = 'default' | 'semibold';
+
+export interface TransitionProps {
+    enter?: string;
+    enterFrom?: string;
+    enterTo?: string;
+    leave?: string;
+    leaveFrom?: string;
+    leaveTo?: string;
+}

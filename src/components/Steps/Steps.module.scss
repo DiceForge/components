@@ -1,0 +1,77 @@
+.Steps {
+    @apply text-gray-10;
+    display: flex;
+}
+
+.Step {
+    width: 100px;
+
+    &:not(:last-child) {
+        margin-right: 60px;
+        position: relative;
+
+        .StepCircle {
+            &:after {
+                @apply bg-gray-6;
+                position: absolute;
+                top: 50%;
+                left: calc(100% + 1px);
+                transform: translateY(-50%);
+                content: '';
+                height: 3px;
+                width: 122px;
+                z-index: -2;
+            }
+        }
+    }
+
+    .StepCircle {
+        @apply border-gray-6 relative;
+        border-width: 3px;
+        margin: auto;
+        box-sizing: border-box;
+        font-size: 18px;
+        font-weight: 600;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.Done {
+        .StepCircle {
+            @apply border-blue-6;
+
+            &:after {
+                @apply bg-blue-6;
+            }
+
+            &:before {
+                @apply bg-blue-6;
+                z-index: -1;
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &.Active {
+        .StepCircle {
+            @apply border-blue-6;
+        }
+    }
+
+    .StepLabel {
+        @apply text-center;
+        margin-top: 3px;
+        font-size: 10px;
+    }
+}

@@ -1,16 +1,25 @@
 .Input {
-    @apply bg-gray-9 rounded text-gray-1 text-body-small focus:outline-none focus:bg-primary-6 focus:text-gray-10 transition;
+    @apply rounded text-gray-10 text-body-small focus:outline-none transition text-left;
 
+    border: 1px solid transparent;
     padding: 7px 12px;
     box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.25);
+    min-height: 35px;
+    min-width: 225px;
+    background-color: rgba(224, 224, 230, 0.035);
 
     &::placeholder {
-        @apply text-gray-8;
+        @apply text-gray-6;
     }
 
     &:focus {
         &::placeholder {
-            @apply text-primary-8;
+            @apply text-gray-7;
         }
+    }
+
+    &.Active, &:focus {
+        @apply border-blue-6;
+        background-color: rgba(224, 224, 230, 0.06);
     }
 }

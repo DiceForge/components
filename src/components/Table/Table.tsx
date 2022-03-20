@@ -5,14 +5,16 @@ import styles from './Table.module.scss';
 interface TableProps {
     bordered?: boolean;
     compact?: boolean;
+    hover?: boolean;
     activeRows?: number[];
 }
 
 const Table = (props: TableProps & React.HTMLProps<HTMLTableElement>) => {
-    const { bordered, compact, children, activeRows, ...rest } = props;
+    const { bordered, compact, children, activeRows, hover, ...rest } = props;
 
     const tableStyles = classNames(styles.Table, {
-        [styles.Compact]: compact
+        [styles.Compact]: compact,
+        [styles.Hover]: hover
     });
 
     return (

@@ -1,0 +1,16 @@
+.NavbarWrapper {
+    @apply flex flex-col;
+}
+
+.Navbar {
+    @apply bg-gray-1 flex items-center;
+    padding: 0 30px;
+    height: 70px;
+}
+
+.NavbarBottom {
+    height: 10px;
+    background-image: url(../../assets/navbar-bottom.png);
+    object-fit: contain;
+    background-size: 100%;
+}

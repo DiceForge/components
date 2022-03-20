@@ -1,0 +1,17 @@
+@import "../Card/Card.module";
+
+.Card {
+    position: absolute;
+    margin-top: 5px;
+    min-width: 180px;
+}
+
+.MenuItem {
+    @apply transition duration-200 flex items-center rounded p-3 cursor-pointer;
+    height: 35px;
+    padding-right: 40px;
+
+    &.Active {
+        @apply bg-blue-7;
+    }
+}

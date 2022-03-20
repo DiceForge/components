@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './Input.module.scss';
+import classNames from 'classnames';
 
-interface InputProps {
-    size?: 'default' | 'large';
-}
+const Input = (props: React.HTMLProps<HTMLInputElement>) => {
+    const inputStyles = classNames(styles.Input);
 
-const Input = (props: InputProps & React.HTMLProps<HTMLInputElement>) => {
-    const { size, ...rest } = props;
-
-    return <input className={styles.Input} {...rest} />;
+    return <input className={inputStyles} {...props} />;
 };
 
 export { Input };
