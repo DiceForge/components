@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react';
-import Select from './Select';
+import { Select } from './Select';
 
 export default {
     title: 'Data Entry/Select',
@@ -21,12 +21,28 @@ const people: Person[] = [
     { id: 5, name: 'Hellen Schmidt with a Really Long Name' }
 ];
 
+const lotsOfPeople = Array.apply(null, Array(50)).map((p, i) => ({ id: i, name: `Person ${i + 1}` }));
+
 export const Default = () => {
     const [val, setVal] = useState<number>();
 
     return (
         <Select value={val} onChange={(value) => setVal(value)} placeholder="Hello World!">
             {people.map((p) => (
+                <Select.Option value={p.id} key={p.id}>
+                    {p.name}
+                </Select.Option>
+            ))}
+        </Select>
+    );
+};
+
+export const ManyOptions = () => {
+    const [val, setVal] = useState<number>();
+
+    return (
+        <Select value={val} onChange={(value) => setVal(value)} placeholder="Hello World!">
+            {lotsOfPeople.map((p) => (
                 <Select.Option value={p.id} key={p.id}>
                     {p.name}
                 </Select.Option>

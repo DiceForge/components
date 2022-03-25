@@ -103,4 +103,4 @@ Select.Option = <T extends any>(props: OptionProps<T>) => {
     return <Listbox.Option value={props.value}>{props.children}</Listbox.Option>;
 };
 
-export default Select;
+export { Select };

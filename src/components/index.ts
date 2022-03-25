@@ -4,3 +4,6 @@ export { Input } from './Input/Input';
 export { Table } from './Table/Table';
 export { Text } from './Text/Text';
 export { Navbar } from './Navbar/Navbar';
+export { Steps } from './Steps/Steps';
+export { Select } from './Select/Select';
+export { Dropdown } from './Dropdown/Dropdown';

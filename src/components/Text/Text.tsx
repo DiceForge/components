@@ -8,6 +8,7 @@ export interface TextProps {
     weight?: TextWeight;
     color?: Colors;
     width?: number;
+    margin?: number;
     inline?: boolean;
 }
 
@@ -16,7 +17,7 @@ type ElementMap = {
 };
 
 const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
-    const { textSize, weight, color, width, inline, ...rest } = props;
+    const { textSize, weight, color, width, margin, inline, ...rest } = props;
 
     const textStyles = classNames(styles.Text, {
         [styles.Heading1]: textSize === 'heading-1',
@@ -37,7 +38,11 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
 
     if (inline) {
         return (
-            <span className={textStyles} style={{ maxWidth: width ?? 'inherit' }} {...rest}>
+            <span
+                className={textStyles}
+                style={{ maxWidth: width ?? 'inherit', marginBottom: margin ?? 'inherit', ...props.style }}
+                {...rest}
+            >
                 {props.children}
             </span>
         );
@@ -58,7 +63,11 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
 
     return React.createElement(
         elementMap[textSize],
-        { className: textStyles, style: { maxWidth: width ?? 'inherit' }, ...rest },
+        {
+            className: textStyles,
+            style: { maxWidth: width ?? 'inherit', marginBottom: margin ?? 'inherit', ...props.style },
+            ...rest
+        },
         props.children
     );
 };
