@@ -26,3 +26,7 @@ Default.args = {
     small: false,
     disabled: false
 };
+
+export const WithClasses = () => (
+    <Button type="solid" color="primary" className="w-full">Beeeeg button</Button>
+)

@@ -17,10 +17,10 @@ const Card = (props: CardProps & React.HTMLProps<HTMLDivElement>) => {
         [styles.Level2]: surface === 'level-2',
         [styles.Color]: surface === 'color',
         [styles.Small]: small
-    });
+    }, props.className);
 
     return (
-        <div className={cardStyles} {...rest}>
+        <div {...rest} className={cardStyles}>
             {props.children}
         </div>
     );

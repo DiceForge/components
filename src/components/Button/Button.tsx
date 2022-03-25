@@ -23,10 +23,10 @@ const Button = (props: ButtonProps & React.HTMLProps<HTMLButtonElement>) => {
         [styles.AccentButton]: color === 'accent',
         [styles.DangerButton]: color === 'danger',
         [styles.SmallButton]: small
-    });
+    }, props.className);
 
     return (
-        <button className={buttonStyles} {...rest}>
+        <button {...rest} className={buttonStyles}>
             {props.children}
         </button>
     );

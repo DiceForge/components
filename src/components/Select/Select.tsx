@@ -51,8 +51,8 @@ const Select = <T extends any>(
 
     return (
         <Listbox value={value} onChange={onSelect}>
-            <Listbox.Button className={({ open }) => classNames(styles.Input, { [styles.Active]: open })}>
-                <span className={styles.InputLabel} {...rest}>
+            <Listbox.Button className={({ open }) => classNames(styles.Input, props.className, { [styles.Active]: open })}>
+                <span {...rest} className={styles.InputLabel}>
                     {displayValue ? (
                         <span>{displayValue}</span>
                     ) : (
