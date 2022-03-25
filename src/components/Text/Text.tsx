@@ -34,14 +34,14 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
         [styles.Primary]: color === 'primary',
         [styles.Accent]: color === 'accent',
         [styles.Danger]: color === 'danger'
-    });
+    }, props.className);
 
     if (inline) {
         return (
             <span
+                {...rest}
                 className={textStyles}
                 style={{ maxWidth: width ?? 'inherit', marginBottom: margin ?? 'inherit', ...props.style }}
-                {...rest}
             >
                 {props.children}
             </span>
@@ -64,9 +64,9 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
     return React.createElement(
         elementMap[textSize],
         {
+            ...rest,
             className: textStyles,
-            style: { maxWidth: width ?? 'inherit', marginBottom: margin ?? 'inherit', ...props.style },
-            ...rest
+            style: { maxWidth: width ?? 'inherit', marginBottom: margin ?? 'inherit', ...props.style }
         },
         props.children
     );
