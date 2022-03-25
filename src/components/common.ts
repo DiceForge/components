@@ -1,6 +1,6 @@
-export type Colors = 'default' | 'primary' | 'accent' | 'danger';
+export type Colors = 'default' | 'primary' | 'secondary' | 'accent' | 'danger';
 export const colorTypes = {
-    options: ['default', 'primary', 'accent', 'danger'],
+    options: ['default', 'primary', 'secondary', 'accent', 'danger'],
     control: {
         type: 'select'
     }

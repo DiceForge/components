@@ -1,5 +1,4 @@
 .Text {
-    @apply text-gray-10;
     font-family: Inter, Helvetica, 'sans-serif';
     line-height: 120%;
 }
@@ -10,6 +9,10 @@
 
 .Primary {
     @apply text-primary-6;
+}
+
+.Secondary {
+    @apply text-gray-9;
 }
 
 .Accent {

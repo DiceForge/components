@@ -32,6 +32,7 @@ const Text = (props: TextProps & React.HTMLProps<HTMLParagraphElement>) => {
         [styles.Footnote]: textSize === 'footnote',
         [styles.SemiBold]: weight === 'semibold',
         [styles.Primary]: color === 'primary',
+        [styles.Secondary]: color === 'secondary',
         [styles.Accent]: color === 'accent',
         [styles.Danger]: color === 'danger'
     }, props.className);
